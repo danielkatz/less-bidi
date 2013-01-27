@@ -34,9 +34,13 @@ CSS
     .style(rtl);
 }
 .style(@bidi) {
+    body{
+		.bidi-direction();
+	}
+
     h1 {
         .bidi-margin-start(20px);
-  	    margin-bottom: 10px;
+		margin-bottom: 10px;
     }
     .two-col article {
         .bidi-float(start);
@@ -49,6 +53,9 @@ CSS
 </td>
 <td>
 <pre>
+.ltr body {
+  direction: ltr;
+}
 .ltr h1 {
   margin-left: 20px;
   margin-bottom: 10px;
@@ -60,6 +67,9 @@ CSS
   float: right;
 }
 
+.rtl body {
+  direction: rtl;
+}
 .rtl h1 {
   margin-right: 20px;
   margin-bottom: 10px;
