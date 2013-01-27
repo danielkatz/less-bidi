@@ -1,0 +1,55 @@
+.bidi-box-shadow(@h-shadow, @v-shadow, @blur: 0px, @spread: 0px, @color: 0) when (isnumber(@h-shadow)) {
+    .bidi-box-shadow(@color, @bidi);
+
+    .bidi-box-shadow(@color, ltr) when (isnumber(@color)) {
+        -moz-box-shadow: @h-shadow @v-shadow @blur @spread;
+        -webkit-box-shadow: @h-shadow @v-shadow @blur @spread;
+        box-shadow: @h-shadow @v-shadow @blur @spread;
+    }
+
+    .bidi-box-shadow(@color, ltr) when (iscolor(@color)) {
+        -moz-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+        -webkit-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+        box-shadow: @h-shadow @v-shadow @blur @spread @color;
+    }
+
+    .bidi-box-shadow(@color, rtl) when (isnumber(@color)) {
+        -moz-box-shadow: (0 - @h-shadow) @v-shadow @blur @spread;
+        -webkit-box-shadow: (0 - @h-shadow) @v-shadow @blur @spread;
+        box-shadow: (0 - @h-shadow) @v-shadow @blur @spread;
+    }
+
+    .bidi-box-shadow(@color, rtl) when (iscolor(@color)) {
+        -moz-box-shadow: (0 - @h-shadow) @v-shadow @blur @spread @color;
+        -webkit-box-shadow: (0 - @h-shadow) @v-shadow @blur @spread @color;
+        box-shadow: (0 - @h-shadow) @v-shadow @blur @spread @color;
+    }
+}
+
+.bidi-box-shadow(inset, @h-shadow, @v-shadow, @blur: 0px, @spread: 0px, @color: 0) when (isnumber(@h-shadow)) {
+    .bidi-box-shadow(@color, @bidi);
+
+    .bidi-box-shadow(@color, ltr) when (isnumber(@color)) {
+        -moz-box-shadow: inset @h-shadow @v-shadow @blur @spread;
+        -webkit-box-shadow: inset @h-shadow @v-shadow @blur @spread;
+        box-shadow: inset @h-shadow @v-shadow @blur @spread;
+    }
+
+    .bidi-box-shadow(@color, ltr) when (iscolor(@color)) {
+        -moz-box-shadow: inset @h-shadow @v-shadow @blur @spread @color;
+        -webkit-box-shadow: inset @h-shadow @v-shadow @blur @spread @color;
+        box-shadow: inset @h-shadow @v-shadow @blur @spread @color;
+    }
+
+    .bidi-box-shadow(@color, rtl) when (isnumber(@color)) {
+        -moz-box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread;
+        -webkit-box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread;
+        box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread;
+    }
+
+    .bidi-box-shadow(@color, rtl) when (iscolor(@color)) {
+        -moz-box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread @color;
+        -webkit-box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread @color;
+        box-shadow: inset (0 - @h-shadow) @v-shadow @blur @spread @color;
+    }
+}

@@ -1,0 +1,47 @@
+// usage: .bidi-margin(1px, 2px, 3px 4px);
+// output:
+//   ltr: margin: 1px 2px 3px 4px;
+//   rtl: margin: 1px 4px 3px 2px;
+.bidi-margin (@top, @end, @bottom, @start) {
+    .bidi-margin (@bidi);
+
+    .bidi-margin (ltr) {
+        margin: @top @end @bottom @start;
+    }
+
+    .bidi-margin (rtl) {
+        margin: @top @start @bottom @end;
+    }
+}
+
+// usage: .bidi-margin-start(5px);
+// output:
+//   ltr: margin-left: 5px;
+//   rtl: margin-right: 5px;
+.bidi-margin-start (@margin) {
+    .bidi-margin-start (@bidi);
+
+    .bidi-margin-start (ltr) {
+        margin-left: @margin;
+    }
+
+    .bidi-margin-start (rtl) {
+        margin-right: @margin;
+    }
+}
+
+// usage: .bidi-margin-end(5px);
+// output:
+//   ltr: margin-right: 5px;
+//   rtl: margin-left: 5px;
+.bidi-margin-end (@margin) {
+    .bidi-margin-end (@bidi);
+
+    .bidi-margin-end (ltr) {
+        margin-right: @margin;
+    }
+
+    .bidi-margin-end (rtl) {
+        margin-left: @margin;
+    }
+}

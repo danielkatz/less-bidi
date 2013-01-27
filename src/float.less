@@ -1,0 +1,23 @@
+// usage: .bidi-float(start | end);
+// output:
+//   ltr: float: left | right;
+//   rtl: float: right | left;
+.bidi-float (@direction) {
+    .bidi-float(@direction, @bidi);
+
+    .bidi-float(start, ltr) {
+        float: left;
+    }
+
+    .bidi-float(end, ltr) {
+        float: right;
+    }
+
+    .bidi-float(start, rtl) {
+        float: right;
+    }
+
+    .bidi-float(end, rtl) {
+        float: left;
+    }
+}

@@ -1,0 +1,127 @@
+// usage: .bidi-border-start(5px solid #000);
+// output:
+//   ltr: border-right: 5px solid #000000;
+//   rtl: border-left: 5px solid #000000;
+.bidi-border-start(@params) {
+    .bidi-border-start(@bidi);
+
+    .bidi-border-start(ltr) {
+        border-left: @params;
+    }
+
+    .bidi-border-start(rtl) {
+        border-right: @params;
+    }
+}
+
+// usage: .bidi-border-start-color(#000);
+// output:
+//   ltr: border-left-color: #000000;
+//   rtl: border-right-color: #000000;
+.bidi-border-start-color(@color) {
+    .bidi-border-start-color(@bidi);
+
+    .bidi-border-start-color(ltr) {
+        border-left-color: @color;
+    }
+
+    .bidi-border-start-color(rtl) {
+        border-right-color: @color;
+    }
+}
+
+// usage: .bidi-border-start-style(solid);
+// output:
+//   ltr: border-left-style: solid;
+//   rtl: border-right-style: solid;
+.bidi-border-start-style(@style) {
+    .bidi-border-start-style(@bidi);
+
+    .bidi-border-start-style(ltr) {
+        border-left-style: @style;
+    }
+
+    .bidi-border-start-style(rtl) {
+        border-right-style: @style;
+    }
+}
+
+// usage: .bidi-border-start-width(5px);
+// output:
+//   ltr: border-left-width: 5px;
+//   rtl: border-right-width: 5px;
+.bidi-border-start-width(@width) {
+    .bidi-border-start-width(@bidi);
+
+    .bidi-border-start-width(ltr) {
+        border-left-width: @width;
+    }
+
+    .bidi-border-start-width(rtl) {
+        border-right-width: @width;
+    }
+}
+
+// usage: .bidi-border-end(5px solid #000);
+// output:
+//   ltr: border-left: 5px solid #000000;
+//   rtl: border-right: 5px solid #000000;
+.bidi-border-end(@params) {
+    .bidi-border-end(@bidi);
+
+    .bidi-border-end(ltr) {
+        border-right: @params;
+    }
+
+    .bidi-border-end(rtl) {
+        border-left: @params;
+    }
+}
+
+// usage: .bidi-border-end-color(#000);
+// output:
+//   ltr: border-right-color: #000000;
+//   rtl: border-left-color: #000000;
+.bidi-border-end-color(@color) {
+    .bidi-border-end-color(@bidi);
+
+    .bidi-border-end-color(ltr) {
+        border-right-color: @color;
+    }
+
+    .bidi-border-end-color(rtl) {
+        border-left-color: @color;
+    }
+}
+
+// usage: .bidi-border-end-style(solid);
+// output:
+//   ltr: border-right-style: solid;
+//   rtl: border-left-style: solid;
+.bidi-border-end-style(@style) {
+    .bidi-border-end-style(@bidi);
+
+    .bidi-border-end-style(ltr) {
+        border-right-style: @style;
+    }
+
+    .bidi-border-end-style(rtl) {
+        border-left-style: @style;
+    }
+}
+
+// usage: .bidi-border-end-width(5px);
+// output:
+//   ltr: border-right-width: 5px;
+//   rtl: border-left-width: 5px;
+.bidi-border-end-width(@width) {
+    .bidi-border-end-width(@bidi);
+
+    .bidi-border-end-width(ltr) {
+        border-right-width: @width;
+    }
+
+    .bidi-border-end-width(rtl) {
+        border-left-width: @width;
+    }
+}

@@ -1,0 +1,31 @@
+// usage: .bidi-direction();
+// output:
+//   ltr: direction: ltr;
+//   rtl: direction: rtl;
+.bidi-direction(@bidi: @bidi) {
+    direction: @bidi;
+}
+
+// usage: .bidi-text-align(start | end);
+// output:
+//   ltr: text-align: left | right;
+//   rtl: text-align: right | left;
+.bidi-text-align(@direction) {
+    .bidi-text-align(@direction, @bidi);
+
+    .bidi-text-align(start, ltr) {
+        text-align: left;
+    }
+
+    .bidi-text-align(end, ltr) {
+        text-align: right;
+    }
+
+    .bidi-text-align(start, rtl) {
+        text-align: right;
+    }
+
+    .bidi-text-align(end, rtl) {
+        text-align: left;
+    }
+}

@@ -1,0 +1,179 @@
+// usage: .bidi-border-radius(1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px);
+// output:
+//   ltr: -webkit-border-radius: 1px 2px 3px 4px / 5px 6px 7px 8px;
+//        -moz-border-radius: 1px 2px 3px 4px / 5px 6px 7px 8px;
+//        border-radius: 1px 2px 3px 4px / 5px 6px 7px 8px;
+//   rtl: -webkit-border-radius: 2px 1px 4px 3px / 6px 5px 8px 7px;
+//        -moz-border-radius: 2px 1px 4px 3px / 6px 5px 8px 7px;
+//        border-radius: 2px 1px 4px 3px / 6px 5px 8px 7px;
+.bidi-border-radius (@top-start-horizontal, @top-end-horizontal, @bottom-end-horizontal, @bottom-start-horizontal, @top-start-vertical, @top-end-vertical, @bottom-end-vertical, @bottom-start-vertical) {
+    .bidi-border-radius (@bidi);
+
+    .bidi-border-radius (ltr) {
+        -webkit-border-radius: @top-start-horizontal @top-end-horizontal @bottom-end-horizontal @bottom-start-horizontal ~"/" @top-start-vertical @top-end-vertical @bottom-end-vertical @bottom-start-vertical;
+        -moz-border-radius: @top-start-horizontal @top-end-horizontal @bottom-end-horizontal @bottom-start-horizontal ~"/" @top-start-vertical @top-end-vertical @bottom-end-vertical @bottom-start-vertical;
+        border-radius: @top-start-horizontal @top-end-horizontal @bottom-end-horizontal @bottom-start-horizontal ~"/" @top-start-vertical @top-end-vertical @bottom-end-vertical @bottom-start-vertical;
+    }
+
+    .bidi-border-radius (rtl) {
+        -webkit-border-radius: @top-end-horizontal @top-start-horizontal @bottom-start-horizontal @bottom-end-horizontal ~"/" @top-end-vertical @top-start-vertical @bottom-start-vertical @bottom-end-vertical;
+        -moz-border-radius: @top-end-horizontal @top-start-horizontal @bottom-start-horizontal @bottom-end-horizontal ~"/" @top-end-vertical @top-start-vertical @bottom-start-vertical @bottom-end-vertical;
+        border-radius: @top-end-horizontal @top-start-horizontal @bottom-start-horizontal @bottom-end-horizontal ~"/" @top-end-vertical @top-start-vertical @bottom-start-vertical @bottom-end-vertical;
+    }
+}
+
+// usage: .bidi-border-radius(1px, 2px, 3px 4px);
+// output:
+//   ltr: -webkit-border-radius: 1px 2px 3px 4px / 1px 2px 3px 4px;
+//        -moz-border-radius: 1px 2px 3px 4px / 1px 2px 3px 4px;
+//        border-radius: 1px 2px 3px 4px / 1px 2px 3px 4px;
+//   rtl: -webkit-border-radius: 2px 1px 4px 3px / 2px 1px 4px 3px;
+//        -moz-border-radius: 2px 1px 4px 3px / 2px 1px 4px 3px;
+//        border-radius: 2px 1px 4px 3px / 2px 1px 4px 3px;
+.bidi-border-radius (@top-start, @top-end, @bottom-end, @bottom-start) {
+    .bidi-border-radius(@top-start, @top-end, @bottom-end, @bottom-start, @top-start, @top-end, @bottom-end, @bottom-start);
+}
+
+// usage: .bidi-border-top-start-radius(1px);
+// output:
+//   ltr:   -webkit-border-top-left-radius: 1px 1px;
+//          -moz-border-radius-topleft: 1px 1px;
+//          border-top-left-radius: 1px 1px;
+//   rtl:   -webkit-border-top-right-radius: 1px 1px;
+//          -moz-border-radius-topright: 1px 1px;
+//          border-top-right-radius: 1px 1px;
+.bidi-border-top-start-radius(@top-start) {
+    .bidi-border-top-start-radius(@top-start, @top-start);
+}
+
+// usage: .bidi-border-top-start-radius(1px, 2px);
+// output:
+//   ltr:   -webkit-border-top-left-radius: 1px 2px;
+//          -moz-border-radius-topleft: 1px 2px;
+//          border-top-left-radius: 1px 2px;
+//   rtl:   -webkit-border-top-right-radius: 1px 2px;
+//          -moz-border-radius-topright: 1px 2px;
+//          border-top-right-radius: 1px 2px;
+.bidi-border-top-start-radius(@top-start-horizontal, @top-start-vertical) {
+    .bidi-border-top-start-radius(@bidi);
+
+    .bidi-border-top-start-radius(ltr) {
+        -webkit-border-top-left-radius: @top-start-horizontal @top-start-vertical;
+        -moz-border-radius-topleft: @top-start-horizontal @top-start-vertical;
+        border-top-left-radius: @top-start-horizontal @top-start-vertical;
+    }
+
+    .bidi-border-top-start-radius(rtl) {
+        -webkit-border-top-right-radius: @top-start-horizontal @top-start-vertical;
+        -moz-border-radius-topright: @top-start-horizontal @top-start-vertical;
+        border-top-right-radius: @top-start-horizontal @top-start-vertical;
+    }
+}
+
+// usage: .bidi-border-bottom-start-radius(1px);
+// output:
+//   ltr:   -webkit-border-bottom-left-radius: 1px 1px;
+//          -moz-border-radius-bottomleft: 1px 1px;
+//          border-bottom-left-radius: 1px 1px;
+//   rtl:   -webkit-border-bottom-right-radius: 1px 1px;
+//          -moz-border-radius-bottomright: 1px 1px;
+//          border-bottom-right-radius: 1px 1px;
+.bidi-border-bottom-start-radius(@bottom-start) {
+    .bidi-border-bottom-start-radius(@bottom-start, @bottom-start);
+}
+
+// usage: .bidi-border-bottom-start-radius(1px, 2px);
+// output:
+//   ltr:   -webkit-border-bottom-left-radius: 1px 2px;
+//          -moz-border-radius-bottomleft: 1px 2px;
+//          border-bottom-left-radius: 1px 2px;
+//   rtl:   -webkit-border-bottom-right-radius: 1px 2px;
+//          -moz-border-radius-bottomright: 1px 2px;
+//          border-bottom-right-radius: 1px 2px;
+.bidi-border-bottom-start-radius(@bottom-start-horizontal, @bottom-start-vertical) {
+    .bidi-border-bottom-start-radius(@bidi);
+
+    .bidi-border-bottom-start-radius(ltr) {
+        -webkit-border-bottom-left-radius: @bottom-start-horizontal @bottom-start-vertical;
+        -moz-border-radius-bottomleft: @bottom-start-horizontal @bottom-start-vertical;
+        border-bottom-left-radius: @bottom-start-horizontal @bottom-start-vertical;
+    }
+
+    .bidi-border-bottom-start-radius(rtl) {
+        -webkit-border-bottom-right-radius: @bottom-start-horizontal @bottom-start-vertical;
+        -moz-border-radius-bottomright: @bottom-start-horizontal @bottom-start-vertical;
+        border-bottom-right-radius: @bottom-start-horizontal @bottom-start-vertical;
+    }
+}
+
+// usage: .bidi-border-top-end-radius(1px);
+// output:
+//   ltr:   -webkit-border-top-left-radius: 1px 1px;
+//          -moz-border-radius-topleft: 1px 1px;
+//          border-top-left-radius: 1px 1px;
+//   rtl:   -webkit-border-top-right-radius: 1px 1px;
+//          -moz-border-radius-topright: 1px 1px;
+//          border-top-right-radius: 1px 1px;
+.bidi-border-top-end-radius(@top-end) {
+    .bidi-border-top-end-radius(@top-end, @top-end);
+}
+
+// usage: .bidi-border-top-end-radius(1px, 2px);
+// output:
+//   ltr:   -webkit-border-top-right-radius: 1px 2px;
+//          -moz-border-radius-topright: 1px 2px;
+//          border-top-right-radius: 1px 2px;
+//   rtl:   -webkit-border-top-left-radius: 1px 2px;
+//          -moz-border-radius-topleft: 1px 2px;
+//          border-top-left-radius: 1px 2px;
+.bidi-border-top-end-radius(@top-end-horizontal, @top-end-vertical) {
+    .bidi-border-top-end-radius(@bidi);
+
+    .bidi-border-top-end-radius(ltr) {
+        -webkit-border-top-right-radius: @top-end-horizontal @top-end-vertical;
+        -moz-border-radius-topright: @top-end-horizontal @top-end-vertical;
+        border-top-right-radius: @top-end-horizontal @top-end-vertical;
+    }
+
+    .bidi-border-top-end-radius(rtl) {
+        -webkit-border-left-right-radius: @top-end-horizontal @top-end-vertical;
+        -moz-border-radius-topleft: @top-end-horizontal @top-end-vertical;
+        border-top-left-radius: @top-end-horizontal @top-end-vertical;
+    }
+}
+
+// usage: .bidi-border-bottom-end-radius(1px);
+// output:
+//   ltr:   -webkit-border-bottom-left-radius: 1px 1px;
+//          -moz-border-radius-bottomleft: 1px 1px;
+//          border-bottom-left-radius: 1px 1px;
+//   rtl:   -webkit-border-bottom-right-radius: 1px 1px;
+//          -moz-border-radius-bottomright: 1px 1px;
+//          border-bottom-right-radius: 1px 1px;
+.bidi-border-bottom-end-radius(@bottom-end) {
+    .bidi-border-bottom-end-radius(@bottom-end, @bottom-end);
+}
+
+// usage: .bidi-border-bottom-end-radius(1px, 2px);
+// output:
+//   ltr:   -webkit-border-bottom-right-radius: 1px 2px;
+//          -moz-border-radius-bottomright: 1px 2px;
+//          border-bottom-right-radius: 1px 2px;
+//   rtl:   -webkit-border-bottom-left-radius: 1px 2px;
+//          -moz-border-radius-bottomleft: 1px 2px;
+//          border-bottom-left-radius: 1px 2px;
+.bidi-border-bottom-end-radius(@bottom-end-horizontal, @bottom-end-vertical) {
+    .bidi-border-bottom-end-radius(@bidi);
+
+    .bidi-border-bottom-end-radius(ltr) {
+        -webkit-border-bottom-right-radius: @bottom-end-horizontal @bottom-end-vertical;
+        -moz-border-radius-bottomright: @bottom-end-horizontal @bottom-end-vertical;
+        border-bottom-right-radius: @bottom-end-horizontal @bottom-end-vertical;
+    }
+
+    .bidi-border-bottom-end-radius(rtl) {
+        -webkit-border-left-right-radius: @bottom-end-horizontal @bottom-end-vertical;
+        -moz-border-radius-bottomleft: @bottom-end-horizontal @bottom-end-vertical;
+        border-bottom-left-radius: @bottom-end-horizontal @bottom-end-vertical;
+    }
+}

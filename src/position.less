@@ -1,0 +1,31 @@
+// usage: .bidi-start-offset(5px);
+// output:
+//   ltr: left: 5px;
+//   rtl: right: 5px;
+.bidi-start-offset (@offset) {
+    .bidi-start-offset(@bidi);
+
+    .bidi-start-offset (ltr) {
+        left: @offset;
+    }
+
+    .bidi-start-offset (rtl) {
+        right: @offset;
+    }
+}
+
+// usage: .bidi-end-offset(5px);
+// output:
+//   ltr: right: 5px;
+//   rtl: left: 5px;
+.bidi-end-offset (@offset) {
+    .bidi-end-offset(@bidi);
+
+    .bidi-end-offset (ltr) {
+        right: @offset;
+    }
+
+    .bidi-end-offset (rtl) {
+        left: @offset;
+    }
+}

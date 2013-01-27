@@ -1,0 +1,23 @@
+// usage: .bidi-clear(start | end);
+// output:
+//   ltr: clear: left | right;
+//   rtl: clear: right | left;
+.bidi-clear (@direction) {
+    .bidi-clear(@direction, @bidi);
+
+    .bidi-clear(start, ltr) {
+        clear: left;
+    }
+
+    .bidi-clear(end, ltr) {
+        clear: right;
+    }
+
+    .bidi-clear(start, rtl) {
+        clear: right;
+    }
+
+    .bidi-clear(end, rtl) {
+        clear: left;
+    }
+}

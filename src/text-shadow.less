@@ -1,0 +1,19 @@
+.bidi-text-shadow(@h-shadow, @v-shadow, @blur: 0px, @color: 0) when (isnumber(@h-shadow)) {
+    .bidi-text-shadow(@color, @bidi);
+
+    .bidi-text-shadow(@color, ltr) when (isnumber(@color)) {
+        text-shadow: @h-shadow @v-shadow @blur;
+    }
+
+    .bidi-text-shadow(@color, ltr) when (iscolor(@color)) {
+        text-shadow: @h-shadow @v-shadow @blur @color;
+    }
+
+    .bidi-text-shadow(@color, rtl) when (isnumber(@color)) {
+        text-shadow: (0 - @h-shadow) @v-shadow @blur;
+    }
+
+    .bidi-text-shadow(@color, rtl) when (iscolor(@color)) {
+        text-shadow: (0 - @h-shadow) @v-shadow @blur @color;
+    }
+}
