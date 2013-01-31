@@ -9,10 +9,21 @@ Moreover, the naming convention used throughout the mixins makes it easier to co
 Paradigm shift
 --------------
 Direction agnostic styling is made possible by using a new approach of referring to both sides of a document as the “start” and “end” of the text as opposed to “left” or “right” of the document. This approach is similar to what is done in flex-box specification (although LESS-bidi does not use or depend on flex-box). 
-The interpretation of the terms *start* and *end* depends on the value of the variable <code>@bidi</code>; when the value is <code>ltr</code> than <code>start</code> compiles to <code>left</code>, and <code>end</code> compiles to <code>right</code>, and when the value is <code>rtl</code> it will be exactly the opposite.
-
-
+The interpretation of the terms *start* and *end* depends on the value of the variable <code>@bidi</code>.
+When <code>@bidi: ltr;</code> than *start* compiles to *left*, and *end* compiles to *right*, and when <code>@bidi: rtl;</code> it will be exactly the opposite.
 For example:
+
+	@bidi: ltr;
+	.bidi-text-align(start); // output: text-align: left;
+
+and:
+
+	@bidi: rtl;
+	.bidi-text-align(start); // output: text-align: right;
+
+Basic usage demo
+----------------
+Becouse of the fact that LESS-bidi mixins evalueting to opposite directioned styles depending on the value of @bidi, it enables you to write your styles ones, and have it evaluated under two scopes; one for ltr and one for rtl.
 <table>
 <tr>
 <th>
@@ -25,7 +36,7 @@ CSS
 <tr>
 <td>
 <pre>
-@import "bidi/bidi";
+@import "bidi";
 
 .ltr {
     .style(ltr);
