@@ -5,6 +5,11 @@ LESS-bidi is a set of LESS mixins that allows creating bi-directional styling wi
 By using LESS-bidi mixins, it’s possible to create direction agnostic CSS stylesheets, which are faster to write and much easier to maintain.
 Moreover, the naming convention used throughout the mixins makes it easier to comprehend by keeping the naming of properties as close as possible to the original CSS property names. <br/>
 
+Documentation
+-------------
+* [How it works](#paradigm-shift)
+* [Usage demo](#basic-usage-demo)
+* [Reference](https://github.com/danielkatz/less-bidi/wiki/Mixins-Reference)
 
 Paradigm shift
 --------------
