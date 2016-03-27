@@ -28,7 +28,7 @@ and:
 
 Basic usage demo
 ----------------
-Becouse of the fact that LESS-bidi mixins evalueting to opposite directioned styles depending on the value of @bidi, it enables you to write your styles ones, and have it evaluated under two scopes; one for ltr and one for rtl.
+LESS-bidi mixins evaluate to opposite directioned styles depending on the value of @bidi. Thus, it enables you to write your styles once and have them evaluated under two scopes: one for ltr and one for rtl.
 <table>
 <tr>
 <th>
